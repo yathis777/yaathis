@@ -1,0 +1,13 @@
+name: Build
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses:actions/checkout@v4
+      - name: Show files
+        run: ls -la
+      - name: Print branch
+        run: echo "Building on ${{ github.ref_name }}"
